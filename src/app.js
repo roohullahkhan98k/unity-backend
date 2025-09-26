@@ -20,10 +20,7 @@ const saleChatRoutes = require('./routes/saleChatRoutes');
 const app = express();
 
 console.log('🔌 Connecting to MongoDB...');
-mongoose.connect(process.env.MONGODB_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-})
+mongoose.connect(process.env.MONGODB_URI)
   .then(() => {
     console.log('✅ MongoDB connected successfully!');
     console.log('📊 Database:', process.env.MONGODB_URI.split('/').pop().split('?')[0]);
